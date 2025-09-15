@@ -1,0 +1,15 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="200" fill="url(#professional-grad)"/>
+    <g transform="translate(0, 20)">
+        <path d="M200 130 C160 130, 140 160, 140 190 C140 240, 160 260, 200 260 C240 260, 260 240, 260 190 C260 160, 240 130, 200 130 Z" fill="#FFFFFF" opacity="0.6"/>
+        <path d="M180 250 L180 280 L220 280 L220 250 C210 265, 190 265, 180 250 Z" fill="#FFFFFF" opacity="0.5"/>
+        <path d="M130 350 C140 300, 150 270, 175 275 L225 275 C250 270, 260 300, 270 350 L130 350 Z" fill="#FFFFFF" opacity="0.7"/>
+        <path d="M180 280 L170 300 L200 285 L230 300 L220 280 Z" fill="#FFFFFF" opacity="0.4"/>
+    </g>
+    <defs>
+        <linearGradient id="professional-grad" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2DD4BF"/>
+            <stop offset="1" stop-color="#14B8A6"/>
+        </linearGradient>
+    </defs>
+</svg>
