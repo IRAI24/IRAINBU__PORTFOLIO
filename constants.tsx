@@ -58,7 +58,7 @@ export const PROFILE_DATA: ProfileData = {
   email: 'iraianbu24@gmail.com',
   phone: '+91 95145 57016',
   location: 'Namakkal, Tamil Nadu, India',
-  photoUrl: '/assets/profile-photo.svg', // Corrected path to the existing SVG file.
+  photoUrl: '/assets/profile.jpg', // Corrected path to the existing SVG file.
   socials: [
     {
       name: 'LinkedIn',
