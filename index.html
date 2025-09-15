@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iraianbu Sakthivel - Developer Portfolio</title>
+  <style>
+    :root {
+      /* Light Theme */
+      --color-background-light: 247 243 238; /* Warm off-white */
+      --color-card-light: 255 255 255; /* white */
+      --color-text-light: 30 41 59; /* slate-800 */
+      --color-border-light: 231 229 228; /* stone-200 */
+
+      /* Dark Theme */
+      --color-background-dark: 15 23 42; /* slate-900 */
+      --color-card-dark: 30 41 59; /* slate-800 */
+      --color-text-dark: 248 250 252; /* slate-50 */
+      --color-border-dark: 51 65 85; /* slate-700 */
+
+      /* Accent Color */
+      --color-accent: 20 184 166; /* teal-500 */
+      --color-accent-hover: 13 148 136; /* teal-600 */
+    }
+
+    /* Basic setup */
+    body {
+      background-color: rgb(var(--color-background-light));
+      color: rgb(var(--color-text-light));
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .dark body {
+      background-color: rgb(var(--color-background-dark));
+      color: rgb(var(--color-text-dark));
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes backgroundGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes pulseRing {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--color-accent), 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(var(--color-accent), 0), 0 0 20px 5px rgba(var(--color-accent), 0.3);
+      }
+    }
+    
+    /* Animation Utility Classes */
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-zoom-in { animation: zoomIn 0.7s ease-out forwards; }
+    .animate-slide-in-left { animation: slideInLeft 0.8s ease-out forwards; }
+    .animate-slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
+    .animate-gradient { background-size: 200% 200%; animation: backgroundGradient 15s ease infinite; }
+    .animate-pulseRing { animation: pulseRing 3s ease-in-out infinite; }
+
+    /* 3D Card Hover Effect */
+    .card-3d-hover {
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .card-3d-hover:hover {
+      transform: perspective(1000px) rotateY(5deg) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .dark .card-3d-hover:hover {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    }
+    
+    /* Nav Link Underline Effect */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 50%;
+      background-color: rgb(var(--color-accent));
+      transition: all 0.3s ease-out;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after, .nav-link-active::after {
+      width: 100%;
+    }
+
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'light-background': 'rgb(var(--color-background-light))',
+            'light-card': 'rgb(var(--color-card-light))',
+            'light-text': 'rgb(var(--color-text-light))',
+            'light-border': 'rgb(var(--color-border-light))',
+            'dark-background': 'rgb(var(--color-background-dark))',
+            'dark-card': 'rgb(var(--color-card-dark))',
+            'dark-text': 'rgb(var(--color-text-dark))',
+            'dark-border': 'rgb(var(--color-border-dark))',
+            'accent': 'rgb(var(--color-accent))',
+            'accent-hover': 'rgb(var(--color-accent-hover))',
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'zoom-in': 'zoomIn 0.7s ease-out forwards',
+            'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+            'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+            'background-gradient': 'backgroundGradient 15s ease infinite',
+            'pulse-ring': 'pulseRing 3s ease-in-out infinite'
+          },
+          keyframes: {
+             fadeInUp: {
+              'from': { opacity: 0, transform: 'translateY(20px)' },
+              'to': { opacity: 1, transform: 'translateY(0)' },
+            },
+            zoomIn: {
+              'from': { opacity: 0, transform: 'scale(0.95)' },
+              'to': { opacity: 1, transform: 'scale(1)' },
+            },
+            slideInLeft: {
+              'from': { opacity: 0, transform: 'translateX(-30px)' },
+              'to': { opacity: 1, transform: 'translateX(0)' },
+            },
+            slideInRight: {
+              'from': { opacity: 0, transform: 'translateX(30px)' },
+              'to': { opacity: 1, transform: 'translateX(0)' },
+            },
+            backgroundGradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            pulseRing: {
+              '0%, 100%': { 
+                transform: 'scale(1)',
+                boxShadow: '0 0 0 0 rgba(var(--color-accent), 0.7)'
+              },
+              '70%': { 
+                transform: 'scale(1.05)',
+                boxShadow: '0 0 0 10px rgba(var(--color-accent), 0), 0 0 20px 5px rgba(var(--color-accent), 0.3)'
+              },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index--JEPfYHm.js"></script>
+</head>
+<body class="bg-light-background text-light-text dark:bg-dark-background dark:text-dark-text font-sans antialiased">
+  <div id="root"></div>
+</body>
+</html>
